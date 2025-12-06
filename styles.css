@@ -299,6 +299,54 @@ body {
     border-radius: var(--radius-md);
 }
 
+/* Table Styles */
+.comparison-table,
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: var(--spacing-lg) 0;
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.comparison-table thead,
+table thead {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.comparison-table th,
+table th {
+    padding: var(--spacing-md);
+    text-align: left;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.comparison-table td,
+table td {
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-primary);
+}
+
+.comparison-table tbody tr:last-child td,
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tbody tr:hover,
+table tbody tr:hover {
+    background-color: var(--bg-secondary);
+}
+
+.comparison-table tbody tr:nth-child(even),
+table tbody tr:nth-child(even) {
+    background-color: var(--bg-accent);
+}
+
 /* Gallery Section */
 .gallery-section {
     padding: var(--spacing-2xl) var(--spacing-lg);
