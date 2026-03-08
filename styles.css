@@ -212,10 +212,10 @@ body {
 }
 
 .content-wrapper a {
-    color: var(--primary-color);
-    text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: border-color 0.2s;
+    color: darkgreen;
+    /* border-bottom: 2px solid transparent; */
+    /* transition: border-color 0.2s; */
+    font-size: larger;
 }
 
 .content-wrapper a:hover {
