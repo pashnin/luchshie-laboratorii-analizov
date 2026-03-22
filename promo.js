@@ -1,20 +1,20 @@
 (function () {
-    var overlay = document.getElementById('sber-promo-overlay');
+    var overlay = document.getElementById('creative-overlay');
     if (!overlay) {
         return;
     }
 
-    var closeBtn = overlay.querySelector('.sber-promo-close');
-    var backdrop = overlay.querySelector('.sber-promo-backdrop');
+    var closeBtn = overlay.querySelector('.creative-close');
+    var backdrop = overlay.querySelector('.creative-backdrop');
 
     function hideOverlay() {
         overlay.hidden = true;
-        document.body.classList.remove('sber-promo-open');
+        document.body.classList.remove('creative-modal-open');
     }
 
     function showOverlay() {
         overlay.hidden = false;
-        document.body.classList.add('sber-promo-open');
+        document.body.classList.add('creative-modal-open');
         if (closeBtn) {
             closeBtn.focus();
         }
@@ -35,9 +35,9 @@
         backdrop.addEventListener('click', hideOverlay);
     }
 
-    var promoLink = overlay.querySelector('.sber-promo-link');
-    if (promoLink) {
-        promoLink.addEventListener('click', function () {
+    var creativeLink = overlay.querySelector('.creative-link');
+    if (creativeLink) {
+        creativeLink.addEventListener('click', function () {
             hideOverlay();
         });
     }
