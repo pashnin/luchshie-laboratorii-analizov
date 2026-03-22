@@ -451,8 +451,133 @@ table tbody tr:nth-child(even) {
     }
 }
 
+/* Рекламный баннер (модальное окно) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+body.sber-promo-open {
+    overflow: hidden;
+}
+
+.sber-promo-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md);
+    box-sizing: border-box;
+}
+
+.sber-promo-overlay[hidden] {
+    display: none;
+}
+
+.sber-promo-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    cursor: pointer;
+}
+
+.sber-promo-dialog {
+    position: relative;
+    z-index: 1;
+    max-width: calc(100vw - 2rem);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    background: transparent;
+    line-height: 0;
+}
+
+.sber-promo-close {
+    position: absolute;
+    top: -0.25rem;
+    right: -0.25rem;
+    z-index: 2;
+    width: 2.25rem;
+    height: 2.25rem;
+    border: none;
+    border-radius: 999px;
+    background: #1f2937;
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+}
+
+.sber-promo-close:hover,
+.sber-promo-close:focus-visible {
+    background: #111827;
+}
+
+.sber-promo-close:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.sber-promo-link {
+    display: inline-block;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.sber-promo-link:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+.sber-promo-link img {
+    display: block;
+    width: 336px;
+    height: auto;
+    max-width: 100%;
+}
+
+@media (max-width: 640px) {
+    .sber-promo-dialog {
+        max-height: min(85vh, 640px);
+    }
+
+    .sber-promo-link {
+        display: flex;
+        justify-content: center;
+    }
+
+    .sber-promo-link img {
+        width: auto;
+        max-width: min(92vw, 200px);
+        max-height: min(78vh, 600px);
+        height: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sber-promo-overlay {
+        animation: none;
+    }
+}
+
 /* Print Styles */
 @media print {
+    .sber-promo-overlay {
+        display: none !important;
+    }
+
     .article-header {
         background: white;
         color: black;

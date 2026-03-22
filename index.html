@@ -188,6 +188,44 @@
             </div>
         </footer>
     </div>
+
+    <div id="sber-promo-overlay" class="sber-promo-overlay" hidden>
+        <div class="sber-promo-backdrop" aria-hidden="true"></div>
+        <div
+            class="sber-promo-dialog"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="sber-promo-title"
+        >
+            <h2 id="sber-promo-title" class="visually-hidden">
+                Реклама: Сбер Здоровье — скидка 20% на анализы
+            </h2>
+            <button type="button" class="sber-promo-close" aria-label="Закрыть рекламное объявление">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <a
+                class="sber-promo-link"
+                href="https://trk.ppdu.ru/click/sj4RqAiV?erid=+2SDnjcgFx4U"
+                target="_blank"
+                rel="noopener noreferrer sponsored"
+            >
+                <picture>
+                    <source
+                        media="(max-width: 640px)"
+                        srcset="/assets/sber-banner-160x600.png"
+                    />
+                    <img
+                        src="/assets/sber-banner-336x280.png"
+                        width="336"
+                        height="280"
+                        alt="Сдавайте анализы со скидкой 20% от Сбер Здоровье"
+                        decoding="async"
+                    />
+                </picture>
+            </a>
+        </div>
+    </div>
+    <script src="/promo.js" defer></script>
 </body>
 </html>
 
